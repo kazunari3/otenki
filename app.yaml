@@ -1,0 +1,15 @@
+application: inukura01-hello
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+
+- url: /res
+  static_dir: res
+
+
+- url: /.*
+  script: helloworld.py
+

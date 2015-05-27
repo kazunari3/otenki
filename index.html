@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="res/graph.js">
+
+		</script>
+	</head>
+	<body>
+<script src="res/js/highcharts.js"></script>
+<script src="res/js/modules/exporting.js"></script>
+
+<!-- Additional files for the Highslide popup effect -->
+<script type="text/javascript" src="http://www.highcharts.com/highslide/highslide-full.min.js"></script>
+<script type="text/javascript" src="http://www.highcharts.com/highslide/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="http://www.highcharts.com/highslide/highslide.css" />
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id="title">{{ title }}</div>
+<div id="comment">{{ comment }}</div>
+<object data="{{ temp_url }}" type="image/png"></object>
+<object data="{{ wind_url }}" type="image/png"></object>
+<object data="{{ rader_url }}" type="image/png"></object>
+
+
+<div id="yokohama_avg">res/2.json</div>
+
+	</body>
+</html>
