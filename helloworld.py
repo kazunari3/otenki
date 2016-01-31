@@ -17,7 +17,7 @@ import datetime
 import locale
 import time
 from xml.dom import minidom
-import simplejson
+import json
 def str2float(str):
     try:
        return float(str)
@@ -96,7 +96,7 @@ class MainPage(webapp.RequestHandler):
         src = urllib2.urlopen('http://weather.livedoor.com/forecast/webservice/json/v1?city=140010').read()
         logging.info('json = %s' % src)
 
-        hacks_json = simplejson.loads(src)
+        hacks_json = json.loads(src)
 
         logging.info('title = %s' % hacks_json['title'])
 
@@ -183,7 +183,7 @@ class MainPage(webapp.RequestHandler):
         html = urllib2.urlopen('http://weathernews.jp/s/forecast/getcomment.cgi?&areacode=KANAGAWA&type=day').read()
         # html =  f.read()
 
-        json_data = simplejson.loads(html)
+        json_data = json.loads(html)
 
         title =  json_data['title']
         comment =  json_data['comment']

@@ -131,6 +131,15 @@ $(function () {
          data = "res/" + (date.getMonth()+1) + ".json";
         //data= $("#yokohama_avg").html()
         jQuery.get(data, null, function(tsv, state, xhr) {
+         //当月の日数を求める
+         myD = new Date();
+         days = new Date(myD.getFullYear(),myD.getMonth()+1,0).getDate();
+         //当月初日～末日のunixtimeでx軸を上書き
+		for(i=0; i<days; i++) {
+		  d = new Date(myD.getFullYear(),myD.getMonth(),i+1);
+		  tsv[0][i][0] = d.getTime();
+		  tsv[1][i][0] = d.getTime();
+		}
          options.series[0].data = tsv[0];
          options.series[1].data = tsv[1];
     
