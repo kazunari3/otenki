@@ -140,6 +140,9 @@ $(function () {
 		  tsv[0][i][0] = d.getTime();
 		  tsv[1][i][0] = d.getTime();
 		}
+		//TODO: 閏年でない場合は29日目（配列の末尾）を削除する
+		//del tsv[0].pop()
+		//del tsv[1].pop()
          options.series[0].data = tsv[0];
          options.series[1].data = tsv[1];
     
